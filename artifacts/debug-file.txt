@@ -1,0 +1,65 @@
+helm install fastapi-helm-app fastapi-chart --debug
+install.go:225:  [debug] Original chart version: ""
+install.go:242:  [debug] CHART PATH: /Users/Kubernetes/kubernetes-helm-python-app/helm/fastapi-chart
+
+client.go:142:  [debug] creating 2 resource(s)
+NAME: fastapi-helm-app
+LAST DEPLOYED: Tue Apr 11:05:12 2025
+NAMESPACE: default
+STATUS: deployed
+REVISION: 1
+TEST SUITE: None
+USER-SUPPLIED VALUES:
+{}
+
+COMPUTED VALUES:
+affinity: {}
+image:
+  pullPolicy: IfNotPresent
+  repository: soumyasekhardey/fastapi-helm
+  tag: latest
+nodeSelector: {}
+replicaCount: 2
+resources: {}
+service:
+  port: 8000
+  type: NodePort
+tolerations: []
+
+HOOKS:
+MANIFEST:
+---
+# Source: fastapi-chart/templates/service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-helm-app-service
+spec:
+  type: NodePort
+  selector:
+    app: fastapi-helm-app
+  ports:
+  - port: 8000
+    targetPort: 8000
+---
+# Source: fastapi-chart/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-helm-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fastapi-helm-app
+  template:
+    metadata:
+      labels:
+        app: fastapi-helm-app
+    spec:
+      containers:
+      - name: fastapi-helm-app
+        image: "soumyasekhardey/fastapi-helm:latest"
+        ports:
+        - containerPort: 8000
+
