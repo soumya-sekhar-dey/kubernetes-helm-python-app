@@ -1,0 +1,16 @@
+replicaCount: 2
+
+image:
+  repository: your-dockerhub-username/nokia-fastapi
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8000
+
+resources: {}
+
+nodeSelector: {}
+tolerations: []
+affinity: {}
