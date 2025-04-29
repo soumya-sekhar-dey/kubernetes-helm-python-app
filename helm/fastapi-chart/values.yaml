@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: your-dockerhub-username/nokia-fastapi
+  repository: soumyasekhardey/fastapi-helm
   tag: latest
   pullPolicy: IfNotPresent
 
