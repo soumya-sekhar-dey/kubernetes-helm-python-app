@@ -1,0 +1,17 @@
+sdey@Soumyas-MacBook-Pro kubernetes-helm-python-app % kubectl get all                              
+NAME                                              READY   STATUS    RESTARTS   AGE
+pod/fastapi-helm-app-deployment-c7cc84875-9kfwj   1/1     Running   0          134m
+pod/fastapi-helm-app-deployment-c7cc84875-lj78q   1/1     Running   0          7m5s
+pod/fastapi-helm-app-deployment-c7cc84875-p6zz9   1/1     Running   0          7m5s
+pod/fastapi-helm-app-deployment-c7cc84875-rg9tc   1/1     Running   0          7m5s
+pod/fastapi-helm-app-deployment-c7cc84875-z6x69   1/1     Running   0          23m
+
+NAME                               TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/fastapi-helm-app-service   NodePort    10.103.243.118   <none>        8000:30562/TCP   134m
+service/kubernetes                 ClusterIP   10.96.0.1        <none>        443/TCP          53d
+
+NAME                                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/fastapi-helm-app-deployment   5/5     5            5           134m
+
+NAME                                                    DESIRED   CURRENT   READY   AGE
+replicaset.apps/fastapi-helm-app-deployment-c7cc84875   5         5         5       134m
