@@ -21,7 +21,7 @@ This project demonstrates how to deploy a FastAPI application to a Kubernetes cl
 6. **Argo CD installed in-cluster and UI exposed via port-forward**
 7. **Argo CD app created to track the Helm chart from GitHub**
 
----
+---KUBE-1001
 
 ## ⚠️ Hiccups Faced
 
